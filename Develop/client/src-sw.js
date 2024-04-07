@@ -30,16 +30,17 @@ registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 registerRoute(({ request }) =>
 request.destination === 'style' ||
 request.destination === 'script' ||
-request.destination === 'image',
+request.destination === 'image' ||
+request.destination === 'font',
 new CacheFirst({
-cacheName: 'asset-cache',
+cacheName: 'assets-cache',
 plugins: [
   new CacheableResponsePlugin({
     statuses: [0, 200],
   }),
   new ExpirationPlugin({
-    maxEntries: 50,
-    maxAgeSeconds: 7 * 24 * 60 * 60, // 7 days
+    maxEntries: 50, // Maximum number of entries in the cache
+    maxAgeSeconds: 30 * 24 * 60 * 60, // Maximum age of entries (30 days)
   }),
 ],
 }));
