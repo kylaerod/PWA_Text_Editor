@@ -21,7 +21,7 @@ This project was completed with start code by Xandromus in a repo called cautiou
 
 By starting with a basic skeleton, you then add several components. 
 
-![View of Page](src/components/styles/PortfolioAlien.png)
+![View of Page](PWA_SC.png)
 
 ## Credits
 
